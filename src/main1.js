@@ -207,8 +207,8 @@ class LINE extends LineAPI {
 	    if (isAdminOrBot(seq.from)){
 		this._sendMessage(seq, 'halo'+seq.from_.displayName);
 		}
-		else{
-		this._sendMessage(seq, 'halo juga');
+	    else{
+		this._sendMessage(seq,'halo juga');
 		}
 	}
 		
@@ -297,7 +297,19 @@ class LINE extends LineAPI {
             let { id } = await this._findGroupByTicket(ticketId);
             await this._acceptGroupInvitationByTicket(id,ticketId);
         }
-
+        
+	if(cmd == 'Nk'){
+	    let target = payload.replace('@','');
+	    let group = await this._getGroups([seq.to]);
+	    let gm = group[0].members;
+		for(var i  = 0; i < gm.lenght; i++){
+		    if(gm[i].displayName == target){
+			    target = gm[i].mid;
+		    }
+		}
+		this._kickMember(seq.to,[target]);
+	}
+	    
         if(cmd == 'spm' && isAdminOrBot(seq.from)) { // untuk spam invite contoh: spm <mid>
             for (var i = 0; i < 4; i++) {
                 this._createGroup(`spam`,payload);
