@@ -2,7 +2,7 @@ const LineAPI = require('./api');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 let exec = require('child_process').exec;
 
-const myBot = ['udfb00f527846a196ee6d44dc6eac4162','u51cc1faa86fe99516a1770df95b6120c','u192680dc66b53ff1957274ed982f203b','ucf5eb8ba8b2ce4113f186cd38e077147','u9e5a757e7b6e466baf87e8f747d96eb5','u17642487b67dbc033cb9ae52d429facd'];
+const myBot = ['udfb00f527846a196ee6d44dc6eac4162','u9e5a757e7b6e466baf87e8f747d96eb5','u17642487b67dbc033cb9ae52d429facd'];
 
 
 function isAdminOrBot(param) {
@@ -305,8 +305,8 @@ class LINE extends LineAPI {
         }
 		
         if(txt == 'Bye' && isAdminOrBot(seq.from)) {
-			this_leaveGroup(seq.to);
-		}
+		this.leftGroup(seq.to);
+	}
 		
         if(cmd == 'left'  && isAdminOrBot(seq.from)) { //untuk left dari group atau spam group contoh left <alfath>
             this.leftGroupByName(payload)
