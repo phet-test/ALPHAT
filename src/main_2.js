@@ -214,7 +214,7 @@ class LINE extends LineAPI {
 		
         if(txt == 'speed') {
             const curTime = (Date.now() / 1000);
-            await this._sendMessage(seq,'processing....');
+            //await this._sendMessage(seq,'processing....');
             const rtime = (Date.now() / 1000) - curTime;
             await this._sendMessage(seq, `${rtime} second`);
         }
