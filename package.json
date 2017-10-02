@@ -4,10 +4,10 @@
   "description": "LineAlphat JS",
   "main": "./library/main.js",
   "scripts": {
-    "start": "npm run bot1 | npm run bot2 | npm run bot3",
-    "bot1": "node ./src/bot1.js",
-    "bot2": "node ./src/bot2.js",
-    "bot3": "node ./src/bot3.js"
+    "start": "npm run bot_1 | npm run bot_2 | npm run bot_3",
+    "bot_1": "node ./src/bot_1.js",
+    "bot_2": "node ./src/bot_2.js",
+    "bot_3": "node ./src/bot_3.js"
   },
   "repository": {
     "type": "git",
