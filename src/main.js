@@ -212,12 +212,6 @@ class LINE extends LineAPI {
 		}
 	}
 		
-	if(txt == 'tag all','tagall'){
-	    let { listMember } = await this.searchGroup(seq.to);
-	    const mentions = await this.mention(listMember);
-            seq.contentMetadata = mentions.cmddata;
-            await this._sendMessage(seq,mentions.names.join("));
-	}
         if(txt == 'speed') {
             const curTime = (Date.now() / 1000);
             await this._sendMessage(seq,'processing....');
