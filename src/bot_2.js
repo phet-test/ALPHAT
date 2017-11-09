@@ -6,7 +6,7 @@ const auth = {
 	certificate: '4c2c47e7f111db14e41acb9e6110ef5d257a9623d9f0399660a6b774c89460ce',
 }
 let client =  new LineConnect(auth);
-// let client =  new LineConnect();
+ let client =  new LineConnect();
 
 client.startx().then(async (res) => {
 	
